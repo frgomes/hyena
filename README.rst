@@ -85,7 +85,7 @@ Keyboard layouts like `Tex Yoda`_ define arrows in locations convenient for user
 In addition to that, and in particular of Emacs users, your left hand may become stressed of pushing Ctrl so many times. In
 particular, the left pinky suffers a lot due to such reason.
 
-In order to alliviate this condition, it's possibly a good idea to swap _LCtrl_ with _LAlt_. This way, you can press ``LCtrl`` more or
+In order to alliviate this condition, it's possibly a good idea to swap ``LCtrl`` with ``LAlt``. This way, you can press ``LCtrl`` more or
 less easily with your thumb instead, which is your strongest finger. Also, since ``CapsLock`` maps to ``Fn`` key, and since you will use
 your left pinky to press ``CapsLock``, it is possibly a good idea to define an alternate ``Fn`` key. For this reason, we also define
 ``Menu`` as and additional ``Fn`` key.
