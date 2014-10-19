@@ -1,0 +1,396 @@
+// MiniGuru emulation
+// adopted 2014 by Richard Gomes
+// inspired by http://www.guru-board.com/english/layout_en
+//
+// Shamelessly based on the wonderful work of OEystein Bech "DreymaR" Gadmar
+// See "DreymaR's Big Bag of Keyboard Tricks": http://forum.colemak.com/viewtopic.php?pid=9918
+
+
+// These keys are modified/transposed by holding down the 'extend key' (CapsLock or Menu by default):
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Esc  ~ |! F13  |@ F14  |# F15  |$ F16  |% F17  |^ F18  |& F19  |* F20  |( F21  |) F22  |- F24  |= F24  |
+// |Esc  ` |1 F1   |2 F2   |3 F3   |4 F4   |5 F5   |6 F6   |7 F7   |8 F8   |9 F9   |0 F10  |  F11  |  F12  |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Tab    |Q      |W      |E      |R      |T      |Y      |U      |I      |O      |P      |{      |}      ||      |
+// |       |       |  PrScr|  ScrLk|  Pause|       |       |   Home|  Up   |    End|   PgUp|[      |]      |\      |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Caps   |A      |S      |D      |F      |G      |H      |J      |K      |L      |:      |"      |
+// |       |       |       |       |       |       |       |  Left |  Down |  Right|;  PgDn|' Menu |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |Z      |X      |C      |V      |B      |N      |M      |<      |>      |?      |
+//         |       |       |       |       |       |       |    Del|,   Ins|.      |/      |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//                         |Space                                  |                       |Fn     |
+//                         |                              Backspace|                       |       |
+//                         +---------------------------------------+                       +-------+
+
+
+partial alphanumeric_keys
+xkb_symbols "lv5" {
+  
+  key.type[group1]="EIGHT_LEVEL_SEMIALPHABETIC"; // Lock affects lv1/5 but not lv3/7
+
+  key <TLDE> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape,               Escape                ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<ESC> ,clearmods=LevelFive), Redirect(key=<ESC> ,clearmods=LevelFive) ] }; // `~
+  key <AE01> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1,                   F13                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK01>,clearmods=LevelFive), Redirect(key=<FK13>,clearmods=LevelFive) ] }; // 1!
+  key <AE02> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2,                   F14                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK02>,clearmods=LevelFive), Redirect(key=<FK14>,clearmods=LevelFive) ] }; // 2@
+  key <AE03> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3,                   F15                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK03>,clearmods=LevelFive), Redirect(key=<FK15>,clearmods=LevelFive) ] }; // 3#
+  key <AE04> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4,                   F16                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK04>,clearmods=LevelFive), Redirect(key=<FK16>,clearmods=LevelFive) ] }; // 4$
+  key <AE05> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5,                   F17                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK05>,clearmods=LevelFive), Redirect(key=<FK17>,clearmods=LevelFive) ] }; // 5%
+  key <AE06> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6,                   F18                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK06>,clearmods=LevelFive), Redirect(key=<FK18>,clearmods=LevelFive) ] }; // 6^
+  key <AE07> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F7,                   F19                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK07>,clearmods=LevelFive), Redirect(key=<FK19>,clearmods=LevelFive) ] }; // 7&
+  key <AE08> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F8,                   F20                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK08>,clearmods=LevelFive), Redirect(key=<FK20>,clearmods=LevelFive) ] }; // 8*
+  key <AE09> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F9,                   F21                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK09>,clearmods=LevelFive), Redirect(key=<FK21>,clearmods=LevelFive) ] }; // 9(
+  key <AE10> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F10,                  F22                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK10>,clearmods=LevelFive), Redirect(key=<FK22>,clearmods=LevelFive) ] }; // 0)
+  key <AE11> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F11,                  F23                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK11>,clearmods=LevelFive), Redirect(key=<FK23>,clearmods=LevelFive) ] }; // -_
+  key <AE12> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F12,                  F24                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<FK12>,clearmods=LevelFive), Redirect(key=<FK24>,clearmods=LevelFive) ] }; // =+
+
+  key <AD02> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Print,                Print                 ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<PRSC>,clearmods=LevelFive), Redirect(key=<PRSC>,clearmods=LevelFive) ] }; // pP
+  key <AD03> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Scroll_Lock,          Scroll_Lock           ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<SCLK>,clearmods=LevelFive), Redirect(key=<SCLK>,clearmods=LevelFive) ] }; // [{
+  key <AD04> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pause,                Pause                 ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<PAUS>,clearmods=LevelFive), Redirect(key=<PAUS>,clearmods=LevelFive) ] }; // ]}
+
+  key <AD07> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Home,                 Home                  ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<HOME>,clearmods=LevelFive), Redirect(key=<HOME>,clearmods=LevelFive) ] }; // tT
+  key <AD08> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Up,                   Up                    ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<UP>  ,clearmods=LevelFive), Redirect(key=<UP>  ,clearmods=LevelFive) ] }; // iI
+  key <AD09> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, End,                  End                   ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<END> ,clearmods=LevelFive), Redirect(key=<END> ,clearmods=LevelFive) ] }; // gG
+  key <AD10> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Prior,                Prior                 ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<PGUP>,clearmods=LevelFive), Redirect(key=<PGUP>,clearmods=LevelFive) ] }; // yY
+
+  key <AC07> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Left,                 Left                  ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<LEFT>,clearmods=LevelFive), Redirect(key=<LEFT>,clearmods=LevelFive) ] }; // jJ
+  key <AC08> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Down,                 Down                  ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<DOWN>,clearmods=LevelFive), Redirect(key=<DOWN>,clearmods=LevelFive) ] }; // kK
+  key <AC09> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Right,                Right                 ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<RGHT>,clearmods=LevelFive), Redirect(key=<RGHT>,clearmods=LevelFive) ] }; // lL
+  key <AC10> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Next,                 Next                  ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<PGDN>,clearmods=LevelFive), Redirect(key=<PGDN>,clearmods=LevelFive) ] }; // hH
+
+  key <AB07> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Delete,               Delete                ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<DELE>,clearmods=LevelFive), Redirect(key=<DELE>,clearmods=LevelFive) ] }; // fF
+  key <AB08> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Insert,               Insert                ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<INS> ,clearmods=LevelFive), Redirect(key=<INS> ,clearmods=LevelFive) ] }; // ;:
+
+  key <SPCE> { symbols[Group1]=[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, BackSpace,            BackSpace             ],  actions[Group1]=[ NoAction(), NoAction(), NoAction(), NoAction(), Redirect(key=<BKSP>,clearmods=LevelFive), Redirect(key=<BKSP>,clearmods=LevelFive) ] }; // Space
+
+};
+
+
+default partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us" { // "MINIGURU (US)"
+
+    include "us"
+
+    name[Group1] = "MINIGURU (US)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-intl" { // "MINIGURU (US, international with dead keys)"
+
+    include "us(intl)"
+
+    name[Group1] = "MINIGURU (US, international with dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-alt-intl" { // "MINIGURU (US, alternative international)"
+
+    include "us(alt-intl)"
+
+    name[Group1] = "MINIGURU (US, alternative international)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-altgr-intl" { // "MINIGURU (US, international AltGr dead keys)"
+
+    include "us(altgr-intl)"
+
+    name[Group1] = "MINIGURU (US, international AltGr dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-intl-unicode" { // "MINIGURU (US, international AltGr Unicode combining)"
+
+    include "us(intl-unicode)"
+
+    name[Group1] = "MINIGURU (US, international AltGr Unicode combining)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-alt-intl-unicode" { // "MINIGURU (US, international AltGr Unicode combining, alternative)"
+
+    include "us(alt-intl-unicode)"
+
+    name[Group1] = "MINIGURU (US, international AltGr Unicode combining, alternative)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-mac" { // "MINIGURU (US, Macintosh)"
+
+    include "us(mac)"
+
+    name[Group1] = "MINIGURU (US, Macintosh)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-colemak" { // "MINIGURU (US, Colemak)"
+
+    include "us(colemak)"
+
+    name[Group1] = "MINIGURU (US, Colemak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-workman" { // "MINIGURU (US, Workman)"
+
+    include "us(workman)"
+
+    name[Group1] = "MINIGURU (US, Workman)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-workman-intl" { // "MINIGURU (US, Workman with dead keys)"
+
+    include "us(workman-intl)"
+
+    name[Group1] = "MINIGURU (US, Workman with dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak" { // "MINIGURU (US, programmer Dvorak)"
+
+    include "us(dvorak)"
+
+    name[Group1] = "MINIGURU (US, programmer Dvorak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak-intl" { // "MINIGURU (US, Dvorak, international with dead keys)"
+
+    include "us(dvorak-intl)"
+
+    name[Group1] = "MINIGURU (US, Dvorak, international with dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak-alt-intl" { // "MINIGURU (US, Dvorak, alternative international no dead keys)"
+
+    include "us(dvorak-alt-intl)"
+
+    name[Group1] = "MINIGURU (US, Dvorak, alternative international no dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak-l" { // "MINIGURU (US, left handed Dvorak)"
+
+    include "us(dvorak-l)"
+
+    name[Group1] = "MINIGURU (US, left handed Dvorak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak-r" { // "MINIGURU (US, right handed Dvorak)"
+
+    include "us(dvorak-l)"
+
+    name[Group1] = "MINIGURU (US, right handed Dvorak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "us-dvorak-classic" { // "MINIGURU (US, classic Dvorak)"
+
+    include "us(dvorak-classic)"
+
+    name[Group1] = "MINIGURU (US, classic Dvorak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb" { // "MINIGURU (UK)"
+
+    include "gb"
+
+    name[Group1] = "MINIGURU (UK)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-intl" { // "MINIGURU (UK, international with dead keys)"
+
+    include "gb(intl)"
+
+    name[Group1] = "MINIGURU (UK, international with dead keys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-extd" { // "MINIGURU (UK, extended WinKeys)"
+
+    include "gb(extd)"
+
+    name[Group1] = "MINIGURU (UK, extended WinKeys)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-colemak" { // "MINIGURU (UK, Colemak)"
+
+    include "gb(colemak)"
+
+    name[Group1] = "MINIGURU (UK, Colemak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-dvorak" { // "MINIGURU (UK, Dvorak)"
+
+    include "gb(dvorak)"
+
+    name[Group1] = "MINIGURU (UK, Dvorak)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-dvorakukp" { // "MINIGURU (UK, Dvorak with UK punctuation)"
+
+    include "gb(dvorakukp)"
+
+    name[Group1] = "MINIGURU (UK, Dvorak with UK punctuation)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-mac" { // "MINIGURU (UK, Macintosh)"
+
+    include "gb(mac)"
+
+    name[Group1] = "MINIGURU (UK, Macintosh)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+partial alphanumeric_keys modifier_keys keypad_keys
+xkb_symbols "gb-mac-intl" { // "MINIGURU (UK, Macintosh international)"
+
+    include "gb(mac)"
+
+    name[Group1] = "MINIGURU (UK, Macintosh international)";
+    include "miniguru(lv5)"
+
+    include "carpalx(caps_switch)"
+    include "carpalx(menu_switch)"
+};
+
+
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |~      |!      |@      |#      |$      |$      |^      |&      |*      |(      |)      |_      |+      |
+// |`      |1      |2      |3      |4      |5      |6      |7      |8      |9      |0      |-      |=      |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Tab    |Q      |W      |E      |R      |T      |Y      |U      |I      |O      |P      |{      |}      ||      |
+// |   Caps|       |       |       |       |       |       |       |       |       |       |[      |]      |\      |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Fn     |A      |S      |D      |F      |G      |H      |J      |K      |L      |:      |"      |
+// |       |       |       |       |       |       |       |       |       |       |;      |'      |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |Z      |X      |C      |V      |B      |N      |M      |<      |>      |?      |
+//         |       |       |       |       |       |       |       |,      |.      |/      |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//                         |Space                                  |                       |Fn     |
+//                         |                                       |                       |       |
+//                         +---------------------------------------+                       +-------+
