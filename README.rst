@@ -11,7 +11,7 @@ Quick Installation Guide (for the inpatient)
 
 ::
 
-    $ tar xf carpalx-x11.tar.gz
+    $ git clone https://github.com/frgomes/carpalx
     $ ./carpalx/install.sh
     $ source ./carpalx/bash_xkb.sh
     $ kbtus
