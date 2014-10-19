@@ -4,6 +4,7 @@
 Quick Installation Guide (for the inpatient)
 ============================================
 
+::
   $ tar xf carpalx-x11.tar.gz
   $ ./carpalx/install.sh
   $ source ./carpalx/bash_xkb.sh
@@ -22,7 +23,7 @@ distribution of your operating system to carpalx/intall.sh and please send a pus
 About
 =====
 
-This project provides emulators for mechanical keyboards MINIGURU_ and TEX_Yoda_. Well, an emulator for
+This project provides emulators for mechanical keyboards MINIGURU_ and `TEX Yoda`_. Well, an emulator for
 layouts these keyboards adopt, at least. The idea is that you can use your poorman's rubber dome keyboard
 more or less in a way you would use professional keyboards like these ones mentioned.
 
@@ -38,19 +39,13 @@ the group open on time. If you are not going to build a keyboard yourself, a pos
 implementing the keybindins by software, as this project does.
 
 If you are really enthusiastic about a keyboard with a Trackpoint, one possible solution is buying an
-Unicomp EnduraPro_ and use the software provided by this project with it. The effect will be more or less
+`Unicomp EnduraPro`_ and use the software provided by this project with it. The effect will be more or less
 the same, if you ignore the fact that an EnduraPro is a monster compared with these small keyboards.
-
 Some useful links here:
 
-  * TEX Yoda   https://www.massdrop.com/buy/tex-yoda?mode=guest_open
-  * MINIGURU   http://www.guru-board.com
-  * EnduraPro: http://pckeyboard.com/page/category/EnduraPro
-  * CarpalX:   http://mkweb.bcgsc.ca/carpalx
-
-  _TEX_Yoda           : https://www.massdrop.com/buy/tex-yoda?mode=guest_open
-  _MINIGURU           : http://www.guru-board.com
-  _EnduraPro          : http://pckeyboard.com/page/category/EnduraPro
+  _`TEX Yoda` : https://www.massdrop.com/buy/tex-yoda?mode=guest_open
+  _MINIGURU : http://www.guru-board.com
+  _`Unicomp EnduraPro` : http://pckeyboard.com/page/category/EnduraPro
   _`CarpalX Research` : http://mkweb.bcgsc.ca/carpalx
 
 
@@ -71,6 +66,7 @@ File bash_xkb.sh defines a number of handy aliases. For example, alias kbtusintl
 
 It means that we are composing several layouts onto one:
 
+::
   yoda(us-intl)            : Tex Yoda 'Layer2' layout on top of a "us" 'Layer1' layout
   carpalx(spce_bksp)       : makes Space and additional BackSpace when pressed together a Fn key
   ctrlext(swap_lalt_lctl)  : swaps LAlt (left Alt) with LCtrl (left Ctrl)
@@ -79,7 +75,7 @@ It means that we are composing several layouts onto one:
 Targetting Emacs and Vi users
 =============================
 
-Keyboard layouts like Tex Yoda (and also Miniguru) define arrows in locations convenient for users of Emacs and Vi editors.
+Keyboard layouts like `Tex Yoda`_ define arrows in locations convenient for users of Emacs and Vi editors.
 
 In addition to that, and in particular of Emacs users, your left hand may become stressed of pushing Ctrl so many times. In
 particular, the left pinky suffers a lot due to such reason.
@@ -109,8 +105,8 @@ this page for reference: http://mkweb.bcgsc.ca/carpalx/?full_optimization
 Why this stuff was created
 ==========================
 
-I simply got fed up of first waiting years for MiniGuru and them waiting again for Tex Yoda become available in Massdrop.
-Then I bought an Unicomp EnduraPro, which has a trackpoint and mouse buttons, and I've created this project which makes
+I simply got fed up of first waiting years for MINIGURU_ and them waiting again for `TEX Yoda`_ to become available in Massdrop.
+Then I bought an `Unicomp EnduraPro`_, which has a trackpoint and mouse buttons, and I've created this project which makes
 the operating system responsible for doing the job, not the keyboard.
 
 This is true that EnduraPro is a monster on your desk, but it will reach your door step in about one week or two after you
