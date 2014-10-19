@@ -1,5 +1,10 @@
 ( This is work in progress. )
 
+..  _`TEX Yoda` : https://www.massdrop.com/buy/tex-yoda?mode=guest_open
+..  _MINIGURU : http://www.guru-board.com
+..  _`Unicomp EnduraPro` : http://pckeyboard.com/page/category/EnduraPro
+..  _`CarpalX Research` : http://mkweb.bcgsc.ca/carpalx
+
 
 Quick Installation Guide (for the inpatient)
 ============================================
@@ -11,7 +16,8 @@ Quick Installation Guide (for the inpatient)
     $ source ./carpalx/bash_xkb.sh
     $ kbtus
 
-  Done! Now your poorman's keyboard will behave like this beauty: http://i.imgur.com/O9QsqVG.jpg
+
+Done! Now your poorman's keyboard will behave like this beauty: http://i.imgur.com/O9QsqVG.jpg
 
 
 Contributing
@@ -44,11 +50,6 @@ If you are really enthusiastic about a keyboard with a Trackpoint, one possible 
 the same, if you ignore the fact that an EnduraPro is a monster compared with these small keyboards.
 Some useful links here:
 
-  _`TEX Yoda` : https://www.massdrop.com/buy/tex-yoda?mode=guest_open
-  _MINIGURU : http://www.guru-board.com
-  _`Unicomp EnduraPro` : http://pckeyboard.com/page/category/EnduraPro
-  _`CarpalX Research` : http://mkweb.bcgsc.ca/carpalx
-
 
 Compatibility
 =============
@@ -62,7 +63,9 @@ How it works
 
 File bash_xkb.sh defines a number of handy aliases. For example, alias kbtusintl is defined like this:
 
-  $ alias kbtus='setxkbmap -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
+::
+
+    $ alias kbtus='setxkbmap -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
 
 
 It means that we are composing several layouts onto one:
