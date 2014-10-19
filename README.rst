@@ -5,10 +5,11 @@ Quick Installation Guide (for the inpatient)
 ============================================
 
 ::
-  $ tar xf carpalx-x11.tar.gz
-  $ ./carpalx/install.sh
-  $ source ./carpalx/bash_xkb.sh
-  $ kbtus
+
+    $ tar xf carpalx-x11.tar.gz
+    $ ./carpalx/install.sh
+    $ source ./carpalx/bash_xkb.sh
+    $ kbtus
 
   Done! Now your poorman's keyboard will behave like this beauty: http://i.imgur.com/O9QsqVG.jpg
 
@@ -67,9 +68,10 @@ File bash_xkb.sh defines a number of handy aliases. For example, alias kbtusintl
 It means that we are composing several layouts onto one:
 
 ::
-  yoda(us-intl)            : Tex Yoda 'Layer2' layout on top of a "us" 'Layer1' layout
-  carpalx(spce_bksp)       : makes Space and additional BackSpace when pressed together a Fn key
-  ctrlext(swap_lalt_lctl)  : swaps LAlt (left Alt) with LCtrl (left Ctrl)
+
+    yoda(us-intl)            : Tex Yoda 'Layer2' layout on top of a "us" 'Layer1' layout
+    carpalx(spce_bksp)       : makes Space and additional BackSpace when pressed together a Fn key
+    ctrlext(swap_lalt_lctl)  : swaps LAlt (left Alt) with LCtrl (left Ctrl)
 
 
 Targetting Emacs and Vi users
