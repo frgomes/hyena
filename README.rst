@@ -41,7 +41,7 @@ on your pinkes, in particular if you use Emacs a lot.
 
 The main driver for this project was the fact that these beautiful keyboards are not available for the
 average end user. The MINIGURU_ was first built in 2009 but was never released into production whilst
-the TEX_Yoda_ was produced only in limited quantities via Massdrop, only to those who were able to catch
+the `TEX Yoda`_ was produced only in limited quantities via Massdrop, only to those who were able to catch
 the group open on time. If you are not going to build a keyboard yourself, a possible solution is
 implementing the keybindins by software, as this project does.
 
@@ -93,7 +93,7 @@ CapsLock, it is possibly a good idea to define an alternate Fn key. For this rea
 About CarpalX
 =============
 
-`CarpalX Reseaech`_ studies how easy or how hard different keyboard layouts are for typists, according to their language of preference.
+`CarpalX Research`_ studies how easy or how hard different keyboard layouts are for typists, according to their language of preference.
 
 There are layouts which impose less effort to typists. Among them, some are considered popular, like Colemak and Dvorak. But you can
 define any layout arbitrarily. Or you can define scientifically, aiming optimize the speed people is able to obtain. Among some of
