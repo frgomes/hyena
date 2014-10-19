@@ -61,14 +61,14 @@ works just fine in other versions of Debian and Ubuntu, as well as other derivat
 How it works
 ============
 
-File bash_xkb.sh defines a number of handy aliases. For example, alias kbtusintl is defined like this:
+File bash_xkb.sh defines a number of handy aliases. For example, alias ``kbtus`` is defined like this:
 
 ::
 
     $ alias kbtus='setxkbmap -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
 
 
-It means that we are composing several layouts onto one:
+It means that we are composing several layouts into one:
 
 ::
 
