@@ -118,3 +118,12 @@ the operating system responsible for doing the job, not the keyboard.
 This is true that EnduraPro is a monster on your desk, but it will reach your door step in about one week or two after you
 place the order. Simply connect onto your computer and it is ready and it works. No soldering skills or electronics skills
 needed.
+
+
+TODO List
+=========
+
+1. It should be a proper installation package which installs nicely via ``apt-get``. 
+
+2. It should integrate nicely with KDE and Gnome, making it possible for end users activate this emulation via the keyboard
+configuration applet.
