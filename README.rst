@@ -37,7 +37,7 @@ more or less in a way you would use professional keyboards like these ones menti
 In case you are interested on typing faster and stressing less your hands, this project offers
 alternate keyboards layouts borrowed from `CarpalX Research`_ in addition to a number of popular
 layouts like Dvorak, Colemak, among others. You can also swap control keys, so that you can reduce stress
-on your pinkes, in particular if you use Emacs a lot.
+on your pinkies, in particular if you use Emacs a lot.
 
 The main driver for this project was the fact that these beautiful keyboards are not available for the
 average end user. The MINIGURU_ was first built in 2009 but was never released into production whilst
@@ -48,7 +48,6 @@ implementing the keybindins by software, as this project does.
 If you are really enthusiastic about a keyboard with a Trackpoint, one possible solution is buying an
 `Unicomp EnduraPro`_ and use the software provided by this project with it. The effect will be more or less
 the same, if you ignore the fact that an EnduraPro is a monster compared with these small keyboards.
-Some useful links here:
 
 
 Compatibility
