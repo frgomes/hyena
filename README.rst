@@ -110,7 +110,7 @@ this page for reference: http://mkweb.bcgsc.ca/carpalx/?full_optimization
 Why this stuff was created
 ==========================
 
-I simply got fed up of first waiting years for MINIGURU_ and them waiting again for `TEX Yoda`_ to become available in Massdrop.
+I simply got fed up of first waiting years for MINIGURU_ and then waiting again for `TEX Yoda`_ to become available in Massdrop.
 Then I bought an `Unicomp EnduraPro`_, which has a trackpoint and mouse buttons, and I've created this project which makes
 the operating system responsible for doing the job, not the keyboard.
 

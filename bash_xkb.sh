@@ -40,3 +40,10 @@ alias kbtus=kbt_us
 alias kbtgb=kbt_gb
 alias kbmus=kbm_us
 alias kbmgb=kbm_gb
+
+alias kbusintl=kb_usintl
+alias kbgbintl=kb_gbintl
+alias kbtusintl=kbt_usintl
+alias kbtgbintl=kbt_gbintl
+alias kbmusintl=kbm_usintl
+alias kbmgbintl=kbm_gbintl
