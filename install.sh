@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=$(dirname $(test -L "$BASH_SOURCE" && readlink -f "$BASH_SOURCE" || echo "$BASH_SOURCE") )
+dir=$(readlink -f $(dirname $0))
 
 function copy_files() {
     srcdir=$1
@@ -14,7 +14,8 @@ function copy_files() {
 function report() {
         echo "ERROR: I don't know how to install onto the currently running operating system."
         echo "ERROR: I'm sorry for the inconvenience. :("
-        echo "ERROR: Create bug report at https://github.com/frgomes/carpalx/issues with your uname -a info"
+        echo "ERROR: *** Please create a bug report at https://github.com/frgomes/carpalx/issues"
+        echo "ERROR: *** Let us know your operating system, version and the output of: uname -a"
 }
 
 if [ -d $dir ]; then
