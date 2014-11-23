@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=$(readlink -f $(dirname $0))
+dir=$(dirname $(test -L "$BASH_SOURCE" && readlink -f "$BASH_SOURCE" || echo "$BASH_SOURCE"))
 
 function copy_files() {
     srcdir=$1
