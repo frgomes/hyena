@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ $_ == $0 ]] && echo "ERROR: This script must be sourced"
+
 alias       kb_us='setxkbmap -v 9 -model pc104 -layout "us" -option ""'
 alias       kb_gb='setxkbmap -v 9 -model pc104 -layout "gb" -option ""'
 
