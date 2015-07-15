@@ -1,7 +1,12 @@
 #!/bin/bash
 
+[[ $_ == $0 ]] && echo "ERROR: This script must be sourced"
+
 alias       kb_us='setxkbmap -v 9 -model pc104 -layout "us" -option ""'
 alias       kb_gb='setxkbmap -v 9 -model pc104 -layout "gb" -option ""'
+
+alias       kb_usintl='setxkbmap -v 9 -model pc104 -layout "us(intl)" -option ""'
+alias       kb_gbintl='setxkbmap -v 9 -model pc104 -layout "gb(intl)" -option ""'
 
 alias      kbt_us='setxkbmap -v 9 -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
 alias      kbt_gb='setxkbmap -v 9 -model pc104 -layout "yoda(gb)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
