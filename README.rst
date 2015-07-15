@@ -34,6 +34,11 @@ This project provides emulators for mechanical keyboards MINIGURU_ and `TEX Yoda
 layouts these keyboards adopt, at least. The idea is that you can use your poorman's rubber dome keyboard
 more or less in a way you would use professional keyboards like these ones mentioned.
 
+There's also a layout I designed (heavily based on MINIGURU_) which I call HYENA, which is intended for
+heavy Emacs users... and their poor suffering pinkies. The idea is that pinkies are relieved as much as
+possible and both hands can perform similar tasks, so programmers can find their own way of doing tasks
+without limitations of doing certain things only with one hand or another.
+
 In case you are interested on typing faster and stressing less your hands, this project offers
 alternate keyboards layouts borrowed from `CarpalX Research`_ in addition to a number of popular
 layouts like Dvorak, Colemak, among others. You can also swap control keys, so that you can reduce stress
@@ -88,6 +93,9 @@ In order to alliviate this condition, it's possibly a good idea to swap ``LCtrl`
 less easily with your thumb instead, which is your strongest finger. Also, since ``CapsLock`` maps to ``Fn`` key, and since you will use
 your left pinky to press ``CapsLock``, it is possibly a good idea to define an alternate ``Fn`` key. For this reason, we also define
 ``Menu`` as and additional ``Fn`` key.
+
+In addition, layout HYENA was designed specially focusing Emacs users. It's based on MINIGURU_, which is already excellent, but also
+provides Emacs users additional flexibility given that the vast majority of functions are available on both sides of the layout.
 
 
 About CarpalX

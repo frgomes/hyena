@@ -5,7 +5,7 @@ dir=$(dirname $(test -L "$BASH_SOURCE" && readlink -f "$BASH_SOURCE" || echo "$B
 function copy_files() {
     srcdir=$1
     xkbdir=$2
-    for f in carpalx miniguru yoda ; do
+    for f in carpalx miniguru yoda hyena; do
         echo sudo cp -p "$srcdir/src/symbols/$f" "$xkbdir/symbols/$f"
         sudo cp -p "$srcdir/src/symbols/$f" "$xkbdir/symbols/$f"
     done
