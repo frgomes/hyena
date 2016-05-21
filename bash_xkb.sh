@@ -39,6 +39,11 @@ alias kbcm_qwrkfy='setxkbmap -v 9 -model pc104 -layout "carpalx(qwrkfy-miniguru)
 alias kbcm_qwyrfm='setxkbmap -v 9 -model pc104 -layout "carpalx(qwyrfm-miniguru)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
 alias kbcm_tnwmlc='setxkbmap -v 9 -model pc104 -layout "carpalx(tnwmlc-miniguru)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
 
+alias hyena_us='setxkbmap -v 9 -model pc104 -layout "hyena(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
+alias hyena_gb='setxkbmap -v 9 -model pc104 -layout "hyena(gb)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
+alias hyena_usintl='setxkbmap -v 9 -model pc104 -layout "hyena(us-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
+alias hyena_gbintl='setxkbmap -v 9 -model pc104 -layout "hyena(gb-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"'
+
 alias kbus=kb_us
 alias kbgb=kb_gb
 alias kbtus=kbt_us
