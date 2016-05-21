@@ -1,72 +1,21 @@
 Quick Installation Guide (for the impatient)
 ============================================
 
+    $ mkdir -p $HOME/workspace
+    $ cd $HOME/workspace
     $ git clone https://github.com/frgomes/carpalx
-    $ ./carpalx/install.sh
-    $ source ./carpalx/bash_xkb.sh
-    $ kbtus
+    $ cd carpalx
+	#-- install xkb files onto your system
+    $ sudo ./install.sh
+    #-- defines useful commands and calls one of them
+    $ source ./bash_xkb.sh
+    $ carpalx_tex_us
 
+Done! Now your poorman's $10 keyboard behaves like this beauty...
 
-Done! Now your poorman's keyboard will behave like this [beauty][beautiful TEX Yoda keyboard].
+![Beautiful TEX Yoda keyboard]
 
-
-Contributing
-============
-
-In case the installation script does not work for you, please consider adding support for the
-distribution of your operating system to ``carpalx/install.sh`` and please send a push request.
-
-
-About
-=====
-
-This project provides emulators for mechanical keyboards MINIGURU_ and `TEX Yoda`_. Well, an emulator for
-layouts these keyboards adopt, at least. The idea is that you can use your poorman's rubber dome keyboard
-more or less in a way you would use professional keyboards like these ones mentioned.
-
-There's also a layout I designed (heavily based on MINIGURU_) which I call HYENA, which is intended for
-heavy Emacs users... and their poor suffering pinkies. The idea is that pinkies are relieved as much as
-possible and both hands can perform similar tasks, so programmers can find their own way of doing tasks
-without limitations of doing certain things only with one hand or another.
-
-In case you are interested on typing faster and stressing less your hands, this project offers
-alternate keyboards layouts borrowed from `CarpalX Research`_ in addition to a number of popular
-layouts like Dvorak, Colemak, among others. You can also swap control keys, so that you can reduce stress
-on your pinkies, in particular if you use Emacs a lot.
-
-The main driver for this project was the fact that these beautiful keyboards are not available for the
-average end user. The MINIGURU_ was first built in 2009 but was never released into production whilst
-the `TEX Yoda`_ was produced only in limited quantities via Massdrop, only to those who were able to catch
-the group open on time. If you are not going to build a keyboard yourself, a possible solution is
-implementing the keybindins by software, as this project does.
-
-If you are really enthusiastic about a keyboard with a Trackpoint, one possible solution is buying an
-`Unicomp EnduraPro`_ and use the software provided by this project with it. The effect will be more or less
-the same, if you ignore the fact that an EnduraPro is a monster compared with these small keyboards.
-
-
-Compatibility
-=============
-
-This software was tested on Ubuntu 12.04, Debian Wheezy and Debian Jessie. Chances are that this software
-works just fine in other versions of Debian and Ubuntu, as well as other derivatives of Debian.
-
-
-How it works
-============
-
-File bash_xkb.sh defines a number of handy functions. For example, function ``carpalx_tex_us`` is defined like this:
-
-    function carpalx_tex_us { setxkbmap -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)" ; }
-
-
-It means that we are composing several layouts into one:
-
-    yoda(us-intl)            : Tex Yoda 'Layer2' layout on top of a "us" 'Layer1' layout
-    carpalx(spce_bksp)       : makes Space and additional BackSpace when pressed together a Fn key
-    ctrlext(swap_lalt_lctl)  : swaps LAlt (left Alt) with LCtrl (left Ctrl)
-
-You can call these functions from command line. Or you can simply type ``carpalx_`` followed by a ``TAB`` key and see all of them:
+_Note_: You can also type ``carpalx_`` and press ``TAB`` in order to see other commands available.
 
     carpalx_hyena_gb         carpalx_miniguru_qwrkfy  carpalx_pc_qgmlwy        carpalx_tex_qgmlwb
     carpalx_hyena_gbintl     carpalx_miniguru_qwyrfm  carpalx_pc_qwrkfy        carpalx_tex_qgmlwy
@@ -78,6 +27,51 @@ You can call these functions from command line. Or you can simply type ``carpalx
     carpalx_miniguru_qgmlwb  carpalx_pc_qfmlwy        carpalx_tex_gbintl
     carpalx_miniguru_qgmlwy  carpalx_pc_qgmlwb        carpalx_tex_qfmlwy
 
+
+Contributing
+============
+
+In case the installation script does not work for you, please consider adding support for the
+distribution of your operating system to ``carpalx/install.sh`` and please send us a push request.
+
+
+About
+=====
+
+This project provides emulators for mechanical keyboards [MINIGURU] and [TEX Yoda]. Well, an emulator for layouts these keyboards adopt, at least. The idea is that you can use your poorman's rubber dome keyboard more or less in a way you would use professional keyboards like these ones mentioned.
+
+There's also a layout I designed (heavily based on [MINIGURU]) which I call HYENA, which is intended for heavy ``emacs`` users... and their poor suffering pinkies. The idea is that pinkies are relieved as much as possible and both hands can perform similar tasks, so programmers can find their own way of doing tasks without limitations of doing certain things only with one hand or another.
+
+In case you are interested on typing faster and stressing less your hands, this project offers alternate keyboards layouts borrowed from [CarpalX Research] in addition to a number of popular layouts like Dvorak, Colemak, among others. You can also swap control keys, so that you can reduce stress on your pinkies, in particular if you use ``emacs`` a lot.
+
+The main driver for this project was the fact that these beautiful keyboards are not available for the average end user. The [MINIGURU] was first built in 2009 but was never released into production whilst the [TEX Yoda] was produced only in limited quantities via Massdrop, only to those who were able to catch the group open on time. If you are not going to build a keyboard yourself, a possible solution is implementing the keybindins by software, as this project does.
+
+If you are really enthusiastic about a keyboard with a Trackpoint, one possible solution is buying an [Unicomp EnduraPro] and use the software provided by this project with it. The effect will be more or less the same, if you ignore the fact that an [Unicomp EnduraPro] is a monster compared with these small keyboards.
+
+
+Compatibility
+=============
+
+This software was tested on Ubuntu 12.04, Debian Wheezy and Debian Jessie. Chances are that this software works just fine in other versions of Debian and Ubuntu, as well as other derivatives of Debian.
+
+
+How it works
+============
+
+File bash_xkb.sh defines a number of handy functions. For example, function ``carpalx_tex_us`` is defined like this:
+
+    function carpalx_tex_us {
+        setxkbmap -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"
+    }
+
+
+It means that we are composing several layouts into one:
+
+    yoda(us-intl)            : Tex Yoda 'Layer2' layout on top of a "us" 'Layer1' layout
+    carpalx(spce_bksp)       : makes Space and additional BackSpace when pressed together a Fn key
+    ctrlext(swap_lalt_lctl)  : swaps LAlt (left Alt) with LCtrl (left Ctrl)
+
+You can call these functions from command line. Or you can simply type ``carpalx_`` followed by a ``TAB`` key and see all available functions, as shown on the top of this documentation.
 
 
 Targetting Emacs
