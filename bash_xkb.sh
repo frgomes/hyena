@@ -19,10 +19,10 @@ function carpalx_pc_tnwmlc       { setxkbmap -v 9 -model pc104 -layout "carpalx(
 
 
 # TEX Yoda keyboard with standard US and GB layouts, regular and international, swap Ctrl with Alt
-function carplax_tex_us          { setxkbmap -v 9 -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
-function carplax_tex_gb          { setxkbmap -v 9 -model pc104 -layout "yoda(gb)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
-function carplax_tex_usintl      { setxkbmap -v 9 -model pc104 -layout "yoda(us-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
-function carplax_tex_gbintl      { setxkbmap -v 9 -model pc104 -layout "yoda(gb-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
+function carpalx_tex_us          { setxkbmap -v 9 -model pc104 -layout "yoda(us)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
+function carpalx_tex_gb          { setxkbmap -v 9 -model pc104 -layout "yoda(gb)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
+function carpalx_tex_usintl      { setxkbmap -v 9 -model pc104 -layout "yoda(us-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
+function carpalx_tex_gbintl      { setxkbmap -v 9 -model pc104 -layout "yoda(gb-intl)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
 
 # TEX Yoda keyboard with various alternative CarpalX layouts, swap Ctrl with Alt
 function carpalx_tex_qgmlwb      { setxkbmap -v 9 -model pc104 -layout "carpalx(qgmlwb-yoda)+carpalx(spce_bksp)+carpalx(swap_lalt_lctl)"; }
