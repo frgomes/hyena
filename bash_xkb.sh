@@ -1,10 +1,5 @@
 #!/bin/bash
 
-[[ $_ == $0 ]] && echo "ERROR: This script must be sourced" && exit 1
-
-
-source $(dirname $(test -L "$BASH_SOURCE" && readlink -f "$BASH_SOURCE" || echo "$BASH_SOURCE"))/install.sh
-
 
 # standard PC keyboard with standard US and GB layouts, regular and international
 function carpalx_pc_us           { setxkbmap -v 9 -model pc104 -layout "us" -option ""; }

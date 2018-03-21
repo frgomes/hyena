@@ -1,5 +1,6 @@
 #!/bin/bash
 
+[[ $_ == $0 ]] && echo "ERROR: This script must be sourced" && exit 1
 
 function carpalx_install {
   local srcdir=$(dirname $(test -L "$BASH_SOURCE" && readlink -f "$BASH_SOURCE" || echo "$BASH_SOURCE"))
