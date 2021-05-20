@@ -1,0 +1,112 @@
+// MiniGuru emulation, Level5
+// Inspired by http://www.guru-board.com/english/layout_en
+// (c) 2014 by Richard Gomes - http://github.com/frgomes/hyena
+//
+// > See layout Hyena for detailed documentation.
+//
+// This is "miniguru" layout shown over "us" layout:
+//
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Esc  ~ |! F13  |@ F14  |# F15  |$ F16  |% F17  |^ F18  |& F19  |* F20  |( F21  |) F22  |- F24  |= F24  |
+// |Esc  ` |1 F1   |2 F2   |3 F3   |4 F4   |5 F5   |6 F6   |7 F7   |8 F8   |9 F9   |0 F10  |  F11  |  F12  |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Tab    |Q      |W      |E      |R      |T      |Y      |U      |I      |O      |P      |{      |}      ||      |
+// |       |       |  PrScr|  ScrLk|  Pause|       |       |   Home|  Up   |    End|   PgUp|[      |]      |\      |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Mod4   |A      |S      |D      |F      |G      |H      |J      |K      |L      |:      |"      |
+// |       |       |       |       |       |       |       |  Left |  Down |  Right|;  PgDn|' Menu |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |Z      |X      |C      |V      |B      |N      |M      |<      |>      |?      |
+//         |       |       |       |       |       |       |    Del|,   Ins|.      |/      |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+partial alphanumeric_keys
+xkb_symbols "level5" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+
+    key <AE01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1,          F13         ] };
+    key <AE02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2,          F14         ] };
+    key <AE03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3,          F15         ] };
+    key <AE04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4,          F16         ] };
+    key <AE05> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5,          F17         ] };
+    key <AE06> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6,          F18         ] };
+    key <AE07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F7,          F19         ] };
+    key <AE08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F8,          F20         ] };
+    key <AE09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F9,          F21         ] };
+    key <AE10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F10,         F22         ] };
+    key <AE11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F11,         F23         ] };
+    key <AE12> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F12,         F24         ] };
+
+    key <AD02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Print,       Print       ] };
+    key <AD03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Scroll_Lock, Scroll_Lock ] };
+    key <AD04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pause,       Pause       ] };
+    key <AD07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Home,        Home        ] };
+    key <AD08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Up,          Up          ] };
+    key <AD09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, End,         End         ] };
+    key <AD10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Prior,       Prior       ] };
+
+    key <AC07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Left,        Left        ] };
+    key <AC08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Down,        Down        ] };
+    key <AC09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Right,       Right       ] };
+    key <AC10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Next,        Next        ] };
+
+    key <AB07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Delete,      Delete      ] };
+    key <AB08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Insert,      Insert      ] };
+};
+
+
+// MiniGuru emulation, Level1
+// Inspired by http://www.guru-board.com/english/layout_en
+// (c) 2014 by Richard Gomes - http://github.com/frgomes/hyena
+//
+// > See layout Hyena for detailed documentation.
+//
+// This is "miniguru" layout shown over "us" layout:
+//
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Esc    |! F13  |@ F14  |# F15  |$ F16  |% F17  |^ F18  |& F19  |* F20  |( F21  |) F22  |- F24  |= F24  |
+// |Esc    |1 F1   |2 F2   |3 F3   |4 F4   |5 F5   |6 F6   |7 F7   |8 F8   |9 F9   |0 F10  |  F11  |  F12  |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Tab    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+// |       |       |  PrScr|  ScrLk|  Pause|       |       |   Home|  Up   |    End|   PgUp|       |       |       |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Mod4   |       |       |       |       |       |       |       |       |       |       |       |
+// |       |       |       |       |       |       |       |  Left |  Down |  Right|   PgDn|  Menu |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |       |       |       |       |       |       |       |       |       |       |
+//         |       |       |       |       |       |       |    Del|    Ins|       |       |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+partial alphanumeric_keys
+xkb_symbols "level1" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+
+    key <AE01> { [ F1,          F13         ] };
+    key <AE02> { [ F2,          F14         ] };
+    key <AE03> { [ F3,          F15         ] };
+    key <AE04> { [ F4,          F16         ] };
+    key <AE05> { [ F5,          F17         ] };
+    key <AE06> { [ F6,          F18         ] };
+    key <AE07> { [ F7,          F19         ] };
+    key <AE08> { [ F8,          F20         ] };
+    key <AE09> { [ F9,          F21         ] };
+    key <AE10> { [ F10,         F22         ] };
+    key <AE11> { [ F11,         F23         ] };
+    key <AE12> { [ F12,         F24         ] };
+
+    key <AD02> { [ Print,       Print       ] };
+    key <AD03> { [ Scroll_Lock, Scroll_Lock ] };
+    key <AD04> { [ Pause,       Pause       ] };
+    key <AD07> { [ Home,        Home        ] };
+    key <AD08> { [ Up,          Up          ] };
+    key <AD09> { [ End,         End         ] };
+    key <AD10> { [ Prior,       Prior       ] };
+
+    key <AC07> { [ Left,        Left        ] };
+    key <AC08> { [ Down,        Down        ] };
+    key <AC09> { [ Right,       Right       ] };
+    key <AC10> { [ Next,        Next        ] };
+
+    key <AB07> { [ Delete,      Delete      ] };
+    key <AB08> { [ Insert,      Insert      ] };
+};

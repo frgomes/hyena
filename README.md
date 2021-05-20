@@ -1,28 +1,29 @@
 Hyena is a compact layout designed for typists, polyglots, mathematicians, programmers and Emacs users.
+
+## READ ME FIRST
+
 > The previous version of this project can be found in the [legacy](https://github.com/frgomes/hyena/tree/legacy) branch.
+
+> Hyena was recently removed from X11 libraries in order to become an installable custom layout. For this reason, the installation process below removes one file from your X11 installation under /usr/share/X11. This is perfectly fine, since sooner or later a new X11 update will remove it anyway.
 
 ## Quick Installation Guide
 
 > See layouts here: [https://github.com/frgomes/hyena/tree/master/docs/hyena.md](https://github.com/frgomes/hyena/tree/master/docs/hyena.md).
 
-![Layouts](/docs/hyena_layouts.png)
+Follow the instructions below:
 
-In order to work properly, **you have to** define how Level5 gets activated using the
-*Advanced* tab in the keyboard applet of your distribution. Below you can see the
-recommended configuration for maximum compatibility and for better relief of stress of
-your poor pinkies when using Emacs:
+```bash
+$ mkdir -p "$HOME/workspace"
+$ git -C "$HOME/workspace" clone http://github.com/frgomes/hyena
+$ sudo $HOME/workspace/hyena/install
+```
 
-    + Ctrl position
-        [x] Swap Left Alt with Left Ctrl
-    + Key to choose 5th level
-        [x] Right Win chooses 5th level and acts as one-time lock if pressed with...
-
-![Advanced](/docs/hyena_advanced.png)
+Then follow the command suggested just after the installation.
 
 
 ## Compatibility
 
-This software works on Linux kernel 5.11 and above.
+This software was designed for X11.
 
 
 ## Motivation
@@ -78,6 +79,15 @@ And I wanted to install my keyboard layout easily from the keyboard applet on KD
 [CarpalX Research] studies how easy or how hard different keyboard layouts are for typists, according to their language of preference.
 
 There are layouts which impose less effort to typists. Among them, some are considered popular, like Colemak and Dvorak. But you can define any layout arbitrarily. Or you can define scientifically, aiming optimize the speed people is able to obtain. Among some of these optimized layouts, it's worth mentoning QGMLWY, which is arguably the most efficient one.
+
+
+### More information about custom XKB layouts in the user space
+
+* https://who-t.blogspot.com/2020/02/user-specific-xkb-configuration-part-1.html
+* https://who-t.blogspot.com/2020/07/user-specific-xkb-configuration-part-2.html
+* https://who-t.blogspot.com/2020/07/user-specific-xkb-configuration-part-3.html
+* https://who-t.blogspot.com/2020/09/user-specific-xkb-configuration-putting.html
+
 
 [HYENA]: https://github.com/frgomes/hyena/tree/master/docs/hyena.md
 [TEX Yoda]: http://i.imgur.com/O9QsqVG.jpg

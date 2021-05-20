@@ -1,0 +1,32 @@
+#!/bin/bash -eu
+
+function install_xkb {
+  local self=$(readlink -f "${BASH_SOURCE[0]}")
+  local dir=$(dirname $self)
+  local config=${XDG_CONFIG_HOME:-${HOME}/.config}
+  [[ ! -e ${config}/xkb ]] || rm ${config}/xkb
+  ln -s ${dir}/xkb ${config}/xkb
+
+  echo 'For the time being, hyena needs to be copied onto /usr/share/X11/xkb/symbols'
+  echo 'Please enter sudo password when requested.'
+  sudo cp ${dir}/xkb/symbols/hyena /usr/share/X11/xkb/symbols/hyena
+  
+  echo '-------------------------------------------------------------------------------------------------------'
+  echo 'Hyena installed. You can try the command below:'
+  echo '    setxkbmap -layout "us,hyena" \'
+  echo '              -variant "symbolic,level1" \'
+  echo '              -option altwin:meta_alt,ctrl:swap_lalt_lctl,lvl3:switch,grp:caps_switch,grp:menu_switch \'
+  echo '             -print | xkbcomp -a - $DISPLAY'
+  echo '-------------------------------------------------------------------------------------------------------'
+}    
+
+if [ $_ != $0 ] ;then
+  # echo "Script is being sourced: list all functions"
+  self=$(readlink -f "${BASH_SOURCE[0]}"); dir=$(dirname $self)
+  grep -E "^function " $self | fgrep -v "function __" | cut -d' ' -f2 | head -n -1
+else
+  # echo "Script is a subshell: execute last function"
+  self=$(readlink -f "${BASH_SOURCE[0]}"); dir=$(dirname $self)
+  cmd=$(grep -E "^function " $self | cut -d' ' -f2 | tail -1)
+  $cmd $*
+fi

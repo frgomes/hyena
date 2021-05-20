@@ -1,0 +1,328 @@
+// Hyena keybindings, Level5
+// A compact layout for typists, polyglots, mathematicians, programmers and Emacs users.
+// (c) 2015-2021 by Richard Gomes - http://github.com/frgomes/hyena
+
+//
+// Manifesto
+// =========
+//
+// I would like to use my compact keyboard like this:
+//     1. use ASCII as a starting point and
+//     2. have accents and also dead accents available and
+//     3. type Greek letters, most common fractions and mathematical symbols and
+//     4. emulate arrow clusters on both hands for ease navigation and
+//     5. invert Ctrl and Alt in order to relieve my pinkies while in Emacs and
+//     6. all of that at the same time, without switching layouts.
+//
+// I also would like to:
+//     7. choose alternative layouts, such as Dvorak, Colemak or Carpalx and
+//     8. build custom configurations, by picking and choosing building blocks.
+//
+//
+// Frequently Asked Questions -- PLEASE READ CAREFULLY
+// ===================================================
+//
+// 1. Which keyboard options are recommended and why?
+//
+// +----------+
+// |Caps Lock |
+// |  disabled|
+// +-------+--+                                                    +---------------+
+// |Shift  |                                                       |Shift          |
+// | pinkie|                                                       |         pinkie|
+// +-------+-------+-------+-----------------------+-------+-------+-------+-------+
+// |Meta   |Super  |Ctrl   |Space                  |Meta   |Super  |Menu   |AltGr  |
+// | pinkie|       |  thumb|                       |  thumb|       |       | pinkie|
+// +-------+-------+-------+-----------------------+-------+-------+-------+-------+
+//
+// Ctrl and Meta are used all the time in Emacs and you can use your thumbs for them,
+// instead of stressing your left pinkie all the time whilst you type.
+//
+// Super is used less frequently but still relatively frequent and you can choose to
+// use your thumbs for pressing these keys too or maybe your middle finger.
+//
+// AltGr (or technically Mod3 or Layer3) would be used only rarely when entering
+// mathmatical or typographical symbols, being pressed by your right pinkie or even
+// two fingers together for reduced stress.
+//
+// Caps Lock and Menu should be ideally mapped to Hyper. However, it is not possible
+// to be done with the options available in the keyboard configuration applet at the
+// time of this writing.
+//
+// This is how we choose keyboard options for achieving this configuration:
+//
+//     + Alt and Win behavior
+//         [x] Alt and Meta are on Alt
+//     + Caps Lock behavior
+//         [x] Caps Lock is disabled
+//     + Ctrl position
+//         [x] Swap Left Alt with Left Ctrl
+//     + Key sequence to kill the X server
+//         [x] Ctrl+Alt+Backspace
+//     + Key to choose 3rd level
+//         [x] Right Ctrl
+//
+//
+// 2. What is the difference between Hyena Level1 and Hyena Level 5?
+//
+// Hyena Level1 is layout which must be used in tandem with some other layout.
+// You configure whatever keyboard layout of your preference and you choose a
+// second layout, namely: Hyena Level1 as your second layout.
+//
+// Hyena Level5 is an experimental layout which defines Level5 on top of certain
+// US and GB layouts.
+//
+// Historically, Hyena Level5 was created first. Then, when Hyena was removed from
+// the X11 libraries to become a separate custom layout, technical difficulties
+// created the need for a simpler solution, which was then designed as a separate
+// layout containing only one layer.
+//
+//
+// This is how you can configure Hyena Layer1 with US Symbolic, for example:
+//
+// . Configure the following layouts:
+//
+//       Map  Layout         Variant                  Label
+//       us   English(US)    English (US, Symbolic)   us
+//       hy   Hyena          Hyena (Level1)           hy
+//
+// . Configure the following options:
+//
+//     + Alt and Win behavior
+//         [x] Alt and Meta are on Alt
+//     + Ctrl position
+//         [x] Swap Left Alt with Left Ctrl
+//     + Key sequence to kill the X server
+//         [x] Ctrl+Alt+Backspace
+//     + Key to choose the 3rd level
+//         [x] Right Ctrl
+//     + Switching to another layout
+//         [x] Caps Lock (while pressed), Alt+Caps Lock for the original action
+//         [x] Menu (while pressed), Shift+Menua for the original action
+//
+//
+// 3. How do I configure Hyena Level5 with US Symbolic, for example?
+//
+// This is experimental and it is not documented here.
+//
+//
+// 4. What about Miniguru and Tex Yoda?
+//
+// These are simple layer1 layouts intended to mimic mechanical keyboards
+// Miniguru https://www.pinterest.co.uk/pin/547398529688719094/ and
+// TEX Yoda https://i.imgur.com/O9QsqVG.jpg
+//
+// Historically, these layouts appeared before Hyena was designed. With Hyena
+// being removed from the X11 libraries in order to become a custom layout, these
+// two primeval layouts where reduced in scope, providing only one layer which
+// must be used in tandem with some other layout.
+//
+
+
+//
+// Kept here for historical reasons only.
+//
+// The example below shows how partial layouts can be composed in order to deliver the
+// functionality promised by Hyena. Notice that you can mix and match to your preferred
+// language, or you can adjust ESC, TAB, BKSP, and TLDE according to your preferences.
+//
+//     file: symbols/us
+//     --------------------------------------------------------------
+//     partial alphanumeric_keys
+//     xkb_symbols "hyena" {
+//         name[Group1]= "Hyena Level5";
+//         include "us(basic)"
+//         include "us(symbolic)"
+//         include "hyena(level5)"
+//         include "hyena(esc)"
+//         include "hyena(tab)"
+//         include "hyena(bksp)"
+//         include "hyena(tlde)"
+//         include "level3(ralt_switch)"
+//         include "level5(caps_switch)"
+//         include "shift(both_shiftlock)"
+//     };
+//
+
+
+partial alphanumeric_keys
+xkb_symbols "esc" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+    key <ESC>  { [ Escape, asciitilde,  backslash, bar, Escape, Escape, Escape, Escape ] }; // Escape ~ \ |
+};
+partial alphanumeric_keys
+xkb_symbols "tab" {
+    key.type[Group1] = "TWO_LEVEL";
+    key <TAB>  { [ Tab, ISO_Left_Tab ] };
+};
+partial alphanumeric_keys
+xkb_symbols "tlde" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+    key <TLDE> { [ grave,  asciitilde,  backslash, bar, Escape, Escape, Escape, Escape ] }; // Escape ~ \ |
+};
+partial alphanumeric_keys
+xkb_symbols "bksp" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+    key <BKSP> { [ BackSpace,  BackSpace, BackSpace, BackSpace, Delete, Delete, Delete, Delete ] };
+};
+
+
+// Hyena keybindings, Level5
+// A compact layout for typists, mathematicians, programmers and Emacs users
+// (c) 2015 by Richard Gomes - http://github.com/frgomes/hyena
+//
+// This is "hyena" layout shown over "us" layout:
+//
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |~      |! F13  |@ F14  |# F15  |$ F16  |% F17  |^ F18  |& F19  |* F20  |( F21  |) F22  |- F24  |= F24  |BkSp   |
+// |` Esc  |1 F1   |2 F2   |3 F3   |4 F4   |5 F5   |6 F6   |7 F7   |8 F8   |9 F9   |0 F10  |  F11  |  F12  | Delete|
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Tab    |Q      |W      |E      |R      |T      |Y      |U      |I      |O      |P      |{  ⅓ ⅛ |}  ⅜ ⅞ ||  ~ ⅔ |
+// |       |q  Ins |w Home |e Up   |r End  |t PgUp |y  Ins |u  Home|i Up   |o   End|p  PgUp|[  ½ ¼ |]  ¾ ⅝ |\  ` ⅙ |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |Mod4   |A      |S      |D      |F      |G      |H      |J      |K      |L      |:      |"  ö ě |
+// |       |a  Del |s Left |d Down |f Right|g PgDn |h  Del |j Left |k Down |l Right|;  PgDn|'  ó ê |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |Z  Æ   |X  Ð   |C  ®   |V  Þ   |B  ¶   |N  Œ ¢ |M  ơ   |<  ê ȧ |>  å ŏ |?  ¿ Ø |
+//         |z  æ   |x  ð   |c  ©   |v  þ   |b  ß   |n  œ ¥ |m  ǫ   |,  ȩ ạ |.  ō ő |/  ¡ ø |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+partial alphanumeric_keys
+xkb_symbols "level5" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+
+    key <AE01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F1,              F13,             F1,               F13            ] }; // F1  F13
+    key <AE02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F2,              F14,             F2,               F14            ] }; // F2  F14
+    key <AE03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F3,              F15,             F3,               F15            ] }; // F3  F15
+    key <AE04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F4,              F16,             F4,               F16            ] }; // F4  F16
+    key <AE05> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F5,              F17,             F5,               F17            ] }; // F5  F17
+    key <AE06> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F6,              F18,             F6,               F18            ] }; // F6  F18
+    key <AE07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F7,              F19,             F7,               F19            ] }; // F7  F19
+    key <AE08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F8,              F20,             F8,               F20            ] }; // F8  F20
+    key <AE09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F9,              F21,             F9,               F21            ] }; // F9  F21
+    key <AE10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F10,             F22,             F10,              F22            ] }; // F10 F22
+    key <AE11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F11,             F23,             F11,              F23            ] }; // F11 F23
+    key <AE12> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    F12,             F24,             F12,              F24            ] }; // F12 F24
+
+    key <BKSP> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Delete,          Delete,          Delete,           Delete         ] };
+
+    key <AD01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Insert,          Insert,          Insert,           Insert         ] }; // Q: Insert
+    key <AD02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Home,            Home,            Home,             Home           ] }; // W: Home
+    key <AD03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Up,              Up,              Up,               Up             ] }; // E: Up
+    key <AD04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    End,             End,             End,              End            ] }; // R: End
+    key <AD05> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Prior,           Prior,           Prior,            Prior          ] }; // T: Prior
+    key <AD06> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Insert,          Insert,          Insert,           Insert         ] }; // Y: Insert
+    key <AD07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Home,            Home,            Home,             Home           ] }; // U: Home
+    key <AD08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Up,              Up,              Up,               Up             ] }; // I: Up
+    key <AD09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    End,             End,             End,              End            ] }; // O: End
+    key <AD10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Prior,           Prior,           Prior,            Prior          ] }; // P: Prior
+    key <AD11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    onehalf,         U2153,           onequarter,       oneeighth      ] }; // ½ ⅓ ¼ ⅛
+    key <AD12> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    threequarters,   threeeighths,    fiveeighths,      seveneighths   ] }; // ¾ ⅜ ⅝ ⅞
+    key <BKSL> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_grave,      dead_tilde,      onesixth,         U2154          ] }; // ` ~ ⅙ ⅔
+
+    key <AC01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Delete,          Delete,          Delete,           Delete         ] }; // A: Delete
+    key <AC02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Left,            Left,            Left,             Left           ] }; // S: Left
+    key <AC03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Down,            Down,            Down,             Down           ] }; // D: Down
+    key <AC04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Right,           Right,           Right,            Right          ] }; // F: Right
+    key <AC05> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Next,            Next,            Next,             Next           ] }; // G: Next
+    key <AC06> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Delete,          Delete,          Delete,           Delete         ] }; // H: Delete
+    key <AC07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Left,            Left,            Left,             Left           ] }; // J: Left
+    key <AC08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Down,            Down,            Down,             Down           ] }; // K: Down
+    key <AC09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Right,           Right,           Right,            Right          ] }; // L: Right
+    key <AC10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Next,            Next,            Next,             Next           ] }; // ;: Next
+    key <AC11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_acute,      dead_diaeresis,  dead_circumflex,  dead_caron     ] }; // ó ö ê ě
+
+    key <AB01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    ae,              AE                                                ] }; // Z: æ Æ
+    key <AB02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    eth,             ETH                                               ] }; // X: ð Ð
+    key <AB03> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    copyright,       registered                                        ] }; // C: © ®
+    key <AB04> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    thorn,           THORN                                             ] }; // V: þ Þ
+    key <AB05> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    ssharp,          paragraph                                         ] }; // B: ß ¶
+    key <AB06> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    oe,              OE,              yen,              cent           ] }; // N: œ Œ ¥ ¢
+    key <AB07> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_ogonek,     dead_horn                                         ] }; // M: ǫ ơ
+    key <AB08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_cedilla,    dead_hook,       dead_belowdot,    dead_abovedot  ] }; // ȩ ê ạ ȧ
+    key <AB09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_macron,     dead_abovering,  dead_doubleacute, dead_breve     ] }; // ō å ő ŏ
+    key <AB10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    exclamdown,      questiondown,    oslash,           Ooblique       ] }; // ¡ ¿ ø Ø
+};
+
+
+// Hyena keybindings, Level1
+// A compact layout for typists, mathematicians, programmers and Emacs users
+// (c) 2015 by Richard Gomes - http://github.com/frgomes/hyena
+//
+// This is "hyena" layout shown over "us" layout:
+//
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |       |  F13  |  F14  |  F15  |  F16  |  F17  |  F18  |  F19  |  F20  |  F21  |  F22  |  F24  |  F24  |BkSp   |
+// |  Esc  |  F1   |  F2   |  F3   |  F4   |  F5   |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |  F12  | Delete|
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |       |       |       |       |       |       |       |       |       |       |       |   ⅓ ⅛ |   ⅜ ⅞ |   ~ ⅔ |
+// |       |   Ins |  Home |  Up   |  End  |  PgUp |   Ins |   Home|  Up   |    End|   PgUp|   ½ ¼ |   ¾ ⅝ |   ` ⅙ |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+// |       |       |       |       |       |       |       |       |       |       |       |   ö ě |
+// |       |   Del |  Left |  Down |  Right|  PgDn |   Del |  Left |  Down |  Right|   PgDn|   ó ê |
+// +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+//         |   Æ   |   Ð   |   ®   |   Þ   |   ¶   |   Œ ¢ |   ơ   |   ê ȧ |   å ŏ |   ¿ Ø |
+//         |   æ   |   ð   |   ©   |   þ   |   ß   |   œ ¥ |   ǫ   |   ȩ ạ |   ō ő |   ¡ ø |
+//         +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+partial alphanumeric_keys
+xkb_symbols "level1" {
+    key.type[Group1] = "EIGHT_LEVEL_SEMIALPHABETIC";
+    name[Group1]= "Custom (Hyena, Level1)";
+    include "hyena(esc)"
+    include "hyena(tab)"
+    include "hyena(bksp)"
+    include "hyena(tlde)"
+
+    key <AE01> { [ F1,              F13,             NoSymbol,   NoSymbol,   F1,               F13            ] }; // F1  F13
+    key <AE02> { [ F2,              F14,             NoSymbol,   NoSymbol,   F2,               F14            ] }; // F2  F14
+    key <AE03> { [ F3,              F15,             NoSymbol,   NoSymbol,   F3,               F15            ] }; // F3  F15
+    key <AE04> { [ F4,              F16,             NoSymbol,   NoSymbol,   F4,               F16            ] }; // F4  F16
+    key <AE05> { [ F5,              F17,             NoSymbol,   NoSymbol,   F5,               F17            ] }; // F5  F17
+    key <AE06> { [ F6,              F18,             NoSymbol,   NoSymbol,   F6,               F18            ] }; // F6  F18
+    key <AE07> { [ F7,              F19,             NoSymbol,   NoSymbol,   F7,               F19            ] }; // F7  F19
+    key <AE08> { [ F8,              F20,             NoSymbol,   NoSymbol,   F8,               F20            ] }; // F8  F20
+    key <AE09> { [ F9,              F21,             NoSymbol,   NoSymbol,   F9,               F21            ] }; // F9  F21
+    key <AE10> { [ F10,             F22,             NoSymbol,   NoSymbol,   F10,              F22            ] }; // F10 F22
+    key <AE11> { [ F11,             F23,             NoSymbol,   NoSymbol,   F11,              F23            ] }; // F11 F23
+    key <AE12> { [ F12,             F24,             NoSymbol,   NoSymbol,   F12,              F24            ] }; // F12 F24
+
+    key <BKSP> { [ Delete,          Delete,          NoSymbol,   NoSymbol,   Delete,           Delete         ] };
+
+    key <AD01> { [ Insert,          Insert,          NoSymbol,   NoSymbol,   Insert,           Insert         ] }; // Q: Insert
+    key <AD02> { [ Home,            Home,            NoSymbol,   NoSymbol,   Home,             Home           ] }; // W: Home
+    key <AD03> { [ Up,              Up,              NoSymbol,   NoSymbol,   Up,               Up             ] }; // E: Up
+    key <AD04> { [ End,             End,             NoSymbol,   NoSymbol,   End,              End            ] }; // R: End
+    key <AD05> { [ Prior,           Prior,           NoSymbol,   NoSymbol,   Prior,            Prior          ] }; // T: Prior
+    key <AD06> { [ Insert,          Insert,          NoSymbol,   NoSymbol,   Insert,           Insert         ] }; // Y: Insert
+    key <AD07> { [ Home,            Home,            NoSymbol,   NoSymbol,   Home,             Home           ] }; // U: Home
+    key <AD08> { [ Up,              Up,              NoSymbol,   NoSymbol,   Up,               Up             ] }; // I: Up
+    key <AD09> { [ End,             End,             NoSymbol,   NoSymbol,   End,              End            ] }; // O: End
+    key <AD10> { [ Prior,           Prior,           NoSymbol,   NoSymbol,   Prior,            Prior          ] }; // P: Prior
+    key <AD11> { [ onehalf,         U2153,           NoSymbol,   NoSymbol,   onequarter,       oneeighth      ] }; // ½ ⅓ ¼ ⅛
+    key <AD12> { [ threequarters,   threeeighths,    NoSymbol,   NoSymbol,   fiveeighths,      seveneighths   ] }; // ¾ ⅜ ⅝ ⅞
+    key <BKSL> { [ dead_grave,      dead_tilde,      NoSymbol,   NoSymbol,   onesixth,         U2154          ] }; // ` ~ ⅙ ⅔
+
+    key <AC01> { [ Delete,          Delete,          NoSymbol,   NoSymbol,   Delete,           Delete         ] }; // A: Delete
+    key <AC02> { [ Left,            Left,            NoSymbol,   NoSymbol,   Left,             Left           ] }; // S: Left
+    key <AC03> { [ Down,            Down,            NoSymbol,   NoSymbol,   Down,             Down           ] }; // D: Down
+    key <AC04> { [ Right,           Right,           NoSymbol,   NoSymbol,   Right,            Right          ] }; // F: Right
+    key <AC05> { [ Next,            Next,            NoSymbol,   NoSymbol,   Next,             Next           ] }; // G: Next
+    key <AC06> { [ Delete,          Delete,          NoSymbol,   NoSymbol,   Delete,           Delete         ] }; // H: Delete
+    key <AC07> { [ Left,            Left,            NoSymbol,   NoSymbol,   Left,             Left           ] }; // J: Left
+    key <AC08> { [ Down,            Down,            NoSymbol,   NoSymbol,   Down,             Down           ] }; // K: Down
+    key <AC09> { [ Right,           Right,           NoSymbol,   NoSymbol,   Right,            Right          ] }; // L: Right
+    key <AC10> { [ Next,            Next,            NoSymbol,   NoSymbol,   Next,             Next           ] }; // ;: Next
+    key <AC11> { [ dead_acute,      dead_diaeresis,  NoSymbol,   NoSymbol,   dead_circumflex,  dead_caron     ] }; // ó ö ê ě
+
+    key <AB01> { [ ae,              AE,              NoSymbol,   NoSymbol                                     ] }; // Z: æ Æ
+    key <AB02> { [ eth,             ETH,             NoSymbol,   NoSymbol                                     ] }; // X: ð Ð
+    key <AB03> { [ copyright,       registered,      NoSymbol,   NoSymbol                                     ] }; // C: © ®
+    key <AB04> { [ thorn,           THORN,           NoSymbol,   NoSymbol                                     ] }; // V: þ Þ
+    key <AB05> { [ ssharp,          paragraph,       NoSymbol,   NoSymbol                                     ] }; // B: ß ¶
+    key <AB06> { [ oe,              OE,              NoSymbol,   NoSymbol,   yen,              cent           ] }; // N: œ Œ ¥ ¢
+    key <AB07> { [ dead_ogonek,     dead_horn,       NoSymbol,   NoSymbol                                     ] }; // M: ǫ ơ
+    key <AB08> { [ dead_cedilla,    dead_hook,       NoSymbol,   NoSymbol,   dead_belowdot,    dead_abovedot  ] }; // ȩ ê ạ ȧ
+    key <AB09> { [ dead_macron,     dead_abovering,  NoSymbol,   NoSymbol,   dead_doubleacute, dead_breve     ] }; // ō å ő ŏ
+    key <AB10> { [ exclamdown,      questiondown,    NoSymbol,   NoSymbol,   oslash,           Ooblique       ] }; // ¡ ¿ ø Ø
+};
