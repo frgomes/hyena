@@ -5,11 +5,6 @@
     <layout>
       <configItem>
         <name>us</name>
-        <shortDescription>en</shortDescription>
-        <description>English (US)</description>
-        <languageList>
-          <iso639Id>eng</iso639Id>
-        </languageList>
       </configItem>
       <variantList>
         <variant>
@@ -83,11 +78,6 @@
     <layout>
       <configItem>
         <name>gb</name>
-        <shortDescription>en-gb</shortDescription>
-        <description>English (UK)</description>
-        <languageList>
-          <iso639Id>eng</iso639Id>
-        </languageList>
       </configItem>
       <variantList>
         <variant>
