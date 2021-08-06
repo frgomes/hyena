@@ -239,7 +239,7 @@ xkb_symbols "level5" {
     key <AC08> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Down,            Down,            Down,             Down           ] }; // K: Down
     key <AC09> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Right,           Right,           Right,            Right          ] }; // L: Right
     key <AC10> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    Next,            Next,            Next,             Next           ] }; // ;: Next
-    key <AC11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_acute,      dead_diaeresis,  dead_circumflex,  dead_caron     ] }; // ó ö ê ě
+    key <AC11> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    dead_acute,      dead_circumflex, dead_diaeresis,   dead_caron     ] }; // ó ô ö ě
 
     key <AB01> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    ae,              AE                                                ] }; // Z: æ Æ
     key <AB02> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol,    eth,             ETH                                               ] }; // X: ð Ð
@@ -322,7 +322,7 @@ xkb_symbols "level1" {
     key <AC08> { [ Down,            Down,            NoSymbol,   NoSymbol,   Down,             Down           ] }; // K: Down
     key <AC09> { [ Right,           Right,           NoSymbol,   NoSymbol,   Right,            Right          ] }; // L: Right
     key <AC10> { [ Next,            Next,            NoSymbol,   NoSymbol,   Next,             Next           ] }; // ;: Next
-    key <AC11> { [ dead_acute,      dead_diaeresis,  NoSymbol,   NoSymbol,   dead_circumflex,  dead_caron     ] }; // ó ö ê ě
+    key <AC11> { [ dead_acute,      dead_circumflex, NoSymbol,   NoSymbol,   dead_diaeresis,   dead_caron     ] }; // ó ô ö ě
 
     key <AB01> { [ ae,              AE,              NoSymbol,   NoSymbol                                     ] }; // Z: æ Æ
     key <AB02> { [ eth,             ETH,             NoSymbol,   NoSymbol                                     ] }; // X: ð Ð
