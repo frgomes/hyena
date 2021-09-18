@@ -13,21 +13,27 @@ function install_xkb {
     cp -rpv ${dir}/xkb/rules   ${XDG_CONFIG_HOME:-${HOME}/.config}/xkb
   fi
   
-  read -p "Install layouts onto /usr/share/X11/xkb? y/N: " confirm
+  read -p "Install layouts onto /usr/share/X11/xkb? Y/n: " confirm
   local confirm=$(echo ${confirm} | tr [:lower:] [:upper:])
-  if [[ "${confirm:-N}" == "Y" ]] ;then
-    echo "[Installing files onto /usr/share/X11/xkb]"
+  if [[ "${confirm:-Y}" == "Y" ]] ;then
+    echo "[Installing hyena onto /usr/share/X11/xkb]"
     mkdir -p ${HOME}/.config/xkb
     sudo cp -rpv ${dir}/xkb/symbols/hyena /usr/share/X11/xkb/symbols
+  else
+    if [[ -f /usr/share/X11/xkb/symbols/hyena ]] ;then
+      echo "[Removing hyena from /usr/share/X11/xkb/symbols]"
+      sudo rm /usr/share/X11/xkb/symbols/hyena
+    fi
   fi
   
-  echo '-------------------------------------------------------------------------------------------------------'
-  echo 'Hyena installed. You can try the command below:'
-  echo '    setxkbmap -layout "us,hyena" \'
-  echo '              -variant "symbolic,level1" \'
-  echo '              -option altwin:meta_alt,ctrl:swap_lalt_lctl,lvl3:switch,grp:caps_switch,grp:menu_switch \'
-  echo '              -print | xkbcomp -a - $DISPLAY'
-  echo '-------------------------------------------------------------------------------------------------------'
+  read -p "Add aliases hyena- (Standard US layout) and hyena+ (Standard US Layout + Hyena) into your ${HOME}/.bashrc? Y/n: " confirm
+  local confirm=$(echo ${confirm} | tr [:lower:] [:upper:])
+  if [[ "${confirm:-Y}" == "Y" ]] ;then
+      cat <<EOD >> ${HOME}/.bashrc
+alias hyena-='setxkbmap -layout "us" -variant "symbolic" -print | xkbcomp -a - $DISPLAY'
+alias hyena+='setxkbmap -layout "us,hyena" -variant "symbolic,level1" -option altwin:meta_alt,ctrl:swap_lalt_lctl,lv3:switch,lv5:ralt_switch,grp:caps_switch -print | xkbcomp -a - $DISPLAY'
+EOD
+  fi
 }    
 
 if [ $_ != $0 ] ;then
