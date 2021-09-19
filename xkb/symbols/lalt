@@ -1,0 +1,9 @@
+// Swap the functions of the Alt_L key and the left Ctrl key,
+// but make the Ctrl key a 'Hyper' modifier
+partial modifier_keys
+xkb_symbols "swap_lctl_hyper" {
+    replace key <LALT> { [ Control_L, Control_L ] };
+    replace key <LCTL> { [ Hyper_L ] };
+    modifier_map Mod1    { <LCTL> };
+    modifier_map Control { <LALT> };
+};

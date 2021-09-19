@@ -4,122 +4,25 @@
   <layoutList>
     <layout>
       <configItem>
-        <name>us</name>
+        <name>custom</name>
       </configItem>
       <variantList>
         <variant>
           <configItem>
             <name>hyena</name>
-            <description>English (US, Hyena Layer5)</description>
+            <description>Hyena Layer</description>
           </configItem>
         </variant>
         <variant>
           <configItem>
-            <name>hyena-dvorak</name>
-            <description>English (US, Hyena Layer5, Dvorak)</description>
+            <name>miniguru</name>
+            <description>Hyena Layer, MiniGuru emulation</description>
           </configItem>
         </variant>
         <variant>
           <configItem>
-            <name>hyena-colemak</name>
-            <description>English (US, Hyena Layer5, Colemak)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-carpalx</name>
-            <description>English (US, Hyena Layer5, Carpalx)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-carpalx-full</name>
-            <description>English (US, Hyena Layer5, Carpalx, full optimization)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-miniguru</name>
-            <description>English (US, Hyena Layer5, MiniGuru emulation)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-miniguru-alt-intl</name>
-            <description>English (US, Hyena Layer5, MiniGuru emulation, alt. intl., with dead keys)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-miniguru-intl-unicode</name>
-            <description>English (US, Hyena Layer5, MiniGuru emulation, intl., AltGr Unicode combining)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-yoda</name>
-            <description>English (US, Hyena Layer5, TEX Yoda emulation)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-yoda-alt-intl</name>
-            <description>English (US, Hyena Layer5, TEX Yoda emulation, alt. intl., with dead keys)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-yoda-intl-unicode</name>
-            <description>English (US, Hyena Layer5, TEX Yoda emulation, intl., AltGr Unicode combining)</description>
-          </configItem>
-        </variant>
-      </variantList>
-    </layout>
-    <layout>
-      <configItem>
-        <name>gb</name>
-      </configItem>
-      <variantList>
-        <variant>
-          <configItem>
-            <name>hyena</name>
-            <description>English (UK, Hyena Layer5)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-dvorak</name>
-            <description>English (UK, Hyena Layer5, Dvorak)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-colemak</name>
-            <description>English (UK, Hyena Layer5, Colemak)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-miniguru</name>
-            <description>English (UK, Hyena Layer5, MiniGuru emulation)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-miniguru-intl</name>
-            <description>English (UK, Hyena Layer5, MiniGuru emulation, intlernational)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-yoda</name>
-            <description>English (UK, Hyena Layer5, TEX Yoda emulation)</description>
-          </configItem>
-        </variant>
-        <variant>
-          <configItem>
-            <name>hyena-yoda-intl</name>
-            <description>English (UK, Hyena Layer5, TEX Yoda emulation, international)</description>
+            <name>yoda</name>
+            <description>Hyena Layer, TEX Yoda emulation</description>
           </configItem>
         </variant>
       </variantList>
@@ -128,25 +31,13 @@
   <!--optionList>
     <group allowMultipleSelection="true">
       <configItem>
-        <name>hyena</name>
+        <name>custom</name>
         <description>Hyena options</description>
       </configItem>
       <option>
         <configItem>
-          <name>hyena:hyena</name>
-          <description>Hyena level5 keybindings</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>hyena:miniguru</name>
-          <description>Miniguru level5 keybindings</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>hyena:yoda</name>
-          <description>TEX Yoda level5 keybindings</description>
+          <name>custom:example</name>
+          <description>Add an option here</description>
         </configItem>
       </option>
     </group>

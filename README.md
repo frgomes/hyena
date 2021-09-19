@@ -1,25 +1,20 @@
 Hyena is a compact layout designed for typists, polyglots, mathematicians, programmers and Emacs users.
 
-## READ ME FIRST
+## COMMUNITY SUPPORT NEEDED
 
-> The previous version of this project can be found in the [legacy](https://github.com/frgomes/hyena/tree/legacy) branch.
+Please let me know how you are using Hyena and if it attends your needs. There's [one issue](https://github.com/frgomes/hyena/issues/6) intented to collect your valuable thoughts.
 
-> Hyena was recently removed from X11 libraries in order to become an installable custom layout. For this reason, the installation process below removes one file from your X11 installation under /usr/share/X11. This is perfectly fine, since sooner or later a new X11 update will remove it anyway.
-
-## Quick Installation Guide
-
-> See layouts here: [https://github.com/frgomes/hyena/tree/master/docs/hyena.md](https://github.com/frgomes/hyena/tree/master/docs/hyena.md).
-
-Follow the instructions below:
+## For the impatient
 
 ```bash
 $ mkdir -p "$HOME/workspace"
 $ git -C "$HOME/workspace" clone http://github.com/frgomes/hyena
-$ sudo $HOME/workspace/hyena/install
+$ $HOME/workspace/hyena/install
+$ source $HOME/.bashrc
+$ hyena
 ```
 
-Then follow the command suggested just after the installation.
-
+More documentation here: [docs](docs)
 
 ## Compatibility
 
@@ -28,18 +23,19 @@ This software was designed for X11.
 
 ## Motivation
 
-I want to use my compact keyboard like this:
+I have a [compact keyboard](https://raw.githubusercontent.com/frgomes/hyena/develop/docs/hyena.jpeg), which I would like to use like this:
 
- * I want to employ plain ASCII for coding and
- * be able to employ Greek letters and mathematical symbols in documentation of my code and
- * be able to employ most common fractions, currency symbols and common typographical symbols and
- * having both regular accents for code and their corresponding dead accents for conversation and
- * emulate arrow clusters on both hands for ease navigation when using Emacs and
- * relieve my poor pinkies while typing with Emacs, so that Ctrl and Alt must be inverted and
- * choose alternative layouts, such as Dvorak, Colemak or Carpalx and
- * all of that at the same time, without switching layouts, without distractions and
- * configuration must be flexible so that other people can pick and choose whatever they wanted.
+    1. use ASCII as a starting point and
+    2. have accents available for most popular European languages and
+    3. mix in mathematical symbols and Greek letters and
+    4. emulate arrow clusters on both hands for ease navigation and
+    5. invert Ctrl and Alt in order to relieve my pinkies while in Emacs and
+    6. all of that at the same time, without switching layouts.
 
+I also would like to:
+
+    7. have Hyper available in Emacs and
+    8. choose alternative layouts, such as Dvorak, Colemak or Carpalx.
 
 ## Focus on Emacs
  
