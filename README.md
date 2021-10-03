@@ -7,11 +7,13 @@ Please let me know how you are using Hyena and if it attends your needs. There's
 ## For the impatient
 
 ```bash
-$ mkdir -p "$HOME/workspace"
-$ git -C "$HOME/workspace" clone http://github.com/frgomes/hyena
-$ $HOME/workspace/hyena/install
-$ source $HOME/.bashrc
-$ hyena
+#!/bin/bash
+
+mkdir -p "$HOME/workspace"
+git -C "$HOME/workspace" clone http://github.com/frgomes/hyena
+$HOME/workspace/hyena/install
+source $HOME/.bashrc
+hyena
 ```
 
 More documentation here: [docs](docs)
